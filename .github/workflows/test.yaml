@@ -16,6 +16,7 @@ jobs:
       - name: Set up JDK
         uses: actions/setup-java@v4
         with:
+          distribution: temurin
           java-version: 17
       - name: Setup Gradle 8.10
         uses: gradle/actions/setup-gradle@v4
