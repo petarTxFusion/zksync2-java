@@ -31,4 +31,4 @@ jobs:
           ./start.sh
           popd
       - name: Test with Gradle
-        run: gradle clean test
+        run: gradle clean test --warning-mode all
