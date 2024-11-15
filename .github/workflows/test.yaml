@@ -31,16 +31,4 @@ jobs:
           ./start.sh
           popd
       - name: Test with Gradle
-        run: ./gradlew clean test --warning-mode all
-        continue-on-error: true
-
-      - name: Upload Test Reports
-        if: failure()
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-reports
-          path: build/reports/tests/test
-
-      - name: Fail the Build if Tests Fail
-        if: failure()
-        run: exit 1
+        run: ./gradlew clean test
