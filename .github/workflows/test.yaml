@@ -31,7 +31,7 @@ jobs:
           ./start.sh
           popd
       - name: Test with Gradle
-        run: gradle clean test --warning-mode all
+        run: ./gradlew clean test --warning-mode all
         continue-on-error: true
 
       - name: Upload Test Reports
