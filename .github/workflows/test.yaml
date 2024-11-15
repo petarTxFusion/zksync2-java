@@ -25,4 +25,4 @@ jobs:
           ./start.sh
           popd
       - name: Test with Gradle
-        run: ./gradlew clean test
+        run: gradle clean test
