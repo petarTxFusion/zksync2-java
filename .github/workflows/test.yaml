@@ -1,6 +1,7 @@
 name: Test Java SDK library
 
 on:
+  workflow_dispatch:
   push:
     branches: [ master, beta ]
   pull_request:
