@@ -151,9 +151,12 @@ public class BaseIntegrationEnv {
         depositToken(L1_DAI);
         System.out.println("L1 DAI balance after: " + testWallet.getBalanceL1().send());
         System.out.println("L2 DAI balance after: " + testWallet.getBalance(l2Dai).send());
-
-        String tokenAddress = deployToken();
-        deployPaymaster(tokenAddress);
+        
+        String code = zksync.ethGetCode("0x841c43fa5d8fffdb9efe3358906f7578d8700dd4", DefaultBlockParameterName.LATEST).send().getCode();
+        if (code.isEmpty()) {
+            String tokenAddress = deployToken();
+            deployPaymaster(tokenAddress);
+        }
     }
 
     public void depositToken(String tokenAddress) throws Exception {
