@@ -21,7 +21,7 @@ jobs:
       - name: Set up Gradle
         uses: gradle/gradle-build-action@v2
         with:
-          gradle-version: 8.3
+          gradle-version: 8.11
       - name: Run local-setup
         run: |
           git clone https://github.com/matter-labs/local-setup.git
