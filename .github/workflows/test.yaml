@@ -27,9 +27,9 @@ jobs:
         run: |
           git clone https://github.com/matter-labs/local-setup.git
           pushd local-setup
-          ./start.sh
+          ./start-zk-chains.sh
           popd
       - name: Print Gradle Version from Wrapper
         run: ./gradlew --version
       - name: Test with Gradle
-        run: ./gradlew clean test
+        run: gradle clean test
