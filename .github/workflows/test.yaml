@@ -18,6 +18,10 @@ jobs:
         with:
           distribution: temurin
           java-version: 17
+      - name: Set up Gradle
+        uses: gradle/gradle-build-action@v2
+        with:
+          gradle-version: 8.3
       - name: Run local-setup
         run: |
           git clone https://github.com/matter-labs/local-setup.git
